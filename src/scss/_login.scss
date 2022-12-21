@@ -1,0 +1,116 @@
+.container {
+  min-height: 100vh;
+  background: #000;
+}
+section span {
+  position: relative;
+  display: block;
+  width: calc(5vw - 2px);
+  height: calc(5vw - 2px);
+  background: #181818;
+  z-index: 2;
+  transition: 1s;
+
+  &:hover {
+    background: var(--primary);
+    transition: 0s;
+  }
+}
+section {
+    overflow: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    gap: 2px;
+    flex-wrap: wrap;
+    
+  .signin {
+    position: absolute;
+    width: 400px;
+    background: var(--bg-dark);
+    z-index: 10;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+
+    .content {
+      position: relative;
+      width: 100%;
+      flex-direction: column;
+      gap: 40px;
+
+      h2 {
+        font-size: 2rem;
+        color: var(--primary);
+      }
+      .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        .inputBx {
+          position: relative;
+          width: 100%;
+
+          input {
+            position: relative;
+            width: 100%;
+            background: var(--input);
+            padding: 25px 10px 7.5px;
+            border-radius: 7px;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1rem;
+
+            &:focus ~ i,
+            &:valid ~ i {
+              transform: translateY(-12px);
+              font-size: 0.8rem;
+              font-weight: 600;
+              color: var(--text-color);
+            }
+            &[type="submit"] {
+              padding: 10px;
+              background: var(--primary);
+              color: #111;
+              font-weight: 400;
+              font-size: 1.1rem;
+              letter-spacing: 0.1rem;
+              cursor: pointer;
+              transition: .3s;
+
+              &:hover {
+                background: #aaa;
+              }
+            }
+          }
+          i {
+            position: absolute;
+            left: 0;
+            padding: 0 10px;
+            font-style: normal;
+            color: var(--text-color-alt);
+            transition: 0.5s;
+            pointer-events: none;
+          }
+        }
+
+        .links {
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            color: var(--text-color);
+
+            &:nth-child(2) {
+              color: var(--primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
